@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+* {
+  @apply font-sans;
+}
+
+/* custom utilities below... */
+
+.card {
+  @apply bg-white rounded-md shadow-sm border border-slate-200;
+}
+
+.card-hover {
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.input-bit {
+  @apply w-full px-3 py-2 border rounded-md border-slate-300 bg-white text-sm;
+}
+.input-bit:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-md text-white font-medium;
+  background: linear-gradient(90deg,#ff7a59,#ff5a8b);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(255,90,120,0.2);
+}
+
+.table-compact th,
+.table-compact td {
+  @apply px-4 py-2 text-sm;
+}
