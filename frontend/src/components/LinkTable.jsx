@@ -9,7 +9,7 @@ function truncate(s, n = 70) {
 }
 
 export default function LinkTable({ links, onDelete }) {
-  const BASE = import.meta.env.VITE_BASE_URL || ''
+  const BASE = import.meta.env.VITE_API_BASE_URL;
 
   if (!links || links.length === 0) {
     return (
@@ -58,12 +58,12 @@ export default function LinkTable({ links, onDelete }) {
                       <HiOutlineClipboardCopy className="w-4 h-4" /> Copy
                     </button>
 
-<Link 
-  to={`/code/${link.code}`} 
-  className="text-sm text-indigo-600 hover:underline"
->
-  Stats
-</Link>
+                    <Link
+                      to={`/code/${link.code}`}
+                      className="text-sm text-indigo-600 hover:underline"
+                    >
+                      Stats
+                    </Link>
                     <a href={`${BASE}/${link.code}`} target="_blank" rel="noreferrer" className="text-sm text-emerald-600">Open</a>
 
                     <button onClick={() => onDelete(link.code)} className="text-sm text-rose-600">Delete</button>
